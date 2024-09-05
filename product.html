@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo" data-aos="fade-right">
+                <img src="j.png" alt="">
+            </div>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About </a>
+                <a href="product.html">Product</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product" id="product">
+        <h1 class="heading"><span></span> Product</h1>
+        <div class="row">
+            <div class="product-container">
+                <a class="product-link" href="https://jeki33.github.io/cake/">
+                    <img src="https://i.pinimg.com/564x/64/39/05/643905a789a925266028ebb0167db3b3.jpg" alt="Cake">
+                    <h3>CAKE</h3>
+                    <p>This cake I make for you.</p>
+                </a>
+            </div>
+            <div class="product-container">
+                <a class="product-link" href="https://jeki33.github.io/letter/">
+                    <img src="https://i.pinimg.com/564x/4a/23/63/4a23639f3ed77de7598c7ccf7eb52cbd.jpg" alt="Letter">
+                    <h3>LETTER</h3>
+                    <p>Personalized letters to express your love.</p>
+                </a>
+            </div>
+            <div class="product-container">
+                <a class="product-link" href="https://jeki33.github.io/gift/">
+                    <img src="https://i.pinimg.com/564x/d1/fb/48/d1fb48a4aeda1942d56bd6456d46ab33.jpg" alt="Gift">
+                    <h3>GIFT</h3>
+                    <p>Special surprises for you.</p>
+                </a>
+            </div>
+            <div class="product-container">
+                <a class="product-link" href="https://jeki33.github.io/foto/">
+                    <img src="https://i.pinimg.com/564x/e3/af/9a/e3af9af9b70a9845a67213bb4218ec52.jpg" alt="Photo">
+                    <h3>PHOTO</h3>
+                    <p>Memorable moments captured just for you.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animasi untuk produk dan heading saat halaman dimuat
+        window.addEventListener('load', function() {
+            document.querySelector('.heading').classList.add('slide-in-top');
+            document.querySelectorAll('.product-container').forEach(function(item) {
+                item.classList.add('slide-in-bottom');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo" data-aos="fade-right">
+                <img src="j.png" alt="">
+            </div>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About </a>
+                <a href="product.html">Product</a>
+            </div>
+        </div>
+    </nav>
+    <section class="about">
+        <div class="row">
+            <div class="video-container">
+                <video id="rahmaVideo" src="WhatsApp Video 2024-08-19 at 12.09.10.mp4" muted></video>
+            </div>
+            <div class="content">
+                <h3>About Rahma</h3>
+                <p>Video disamping adalah Rahma cewek yang cantik,baik,pintar,suka menolong intinya terbaik. Rahma suka matcha ,suka bunga mawar, dan banyak lagi. Hari ini merupakan hari spesial Rahma karena dia berulang tahun, moga apa yang diinginkan Rahma tercapai.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('load', function () {
+    var videoContainer = document.querySelector('.video-container');
+    var content = document.querySelector('.content');
+
+    // Play the video
+    var video = document.getElementById('rahmaVideo');
+    video.play();
+
+    // Add animation classes
+    videoContainer.classList.add('slide-in-left');
+    content.classList.add('slide-in-right');
+});
+
+    </script>
+</body>
+</html>

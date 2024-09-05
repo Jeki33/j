@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Protest+Riot&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://i.pinimg.com/originals/d4/97/50/d49750f776171052bc004c53c36aa90d.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.wrapper .logo img {
+    width: 80px; /* Adjust logo size */
+}
+
+.wrapper .links {
+    display: flex;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    position: relative;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #d2911c; /* Change color on hover */
+}
+
+.links a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: whitesmoke;
+    transition: width 0.3s ease;
+}
+
+.links a:hover::before {
+    width: 100%;
+}
+
+/* Section styles */
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    margin-top: 5vh;
+    overflow: hidden;
+    background-size: cover; /* Cover entire section */
+    background-position: center; /* Center background image */
+    background-repeat: no-repeat; /* Do not repeat image */
+}
+
+section .content {
+    width: 50%;
+    color: black;
+    text-align: center;
+    margin-top: -2vh; /* Move content slightly up */
+}
+
+.content h2 {
+    color: #d2911c;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+}
+
+.content h1 span {
+    font-size: 3.5rem;
+    color: #d2911c;
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+}
+
+.content hr {
+    width: 35%;
+    height: 4px;
+    border: none;
+    margin: 10px 0;
+    background: linear-gradient(to right, #d2911c, #49340f);
+}
+
+.content p {
+    font-size: 1rem;
+    color: black;
+}
+
+.content .icons {
+    width: 70%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.icons div {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons div i {
+    color: #000000; /* Contrasting color */
+    margin-right: 10px;
+    font-size: 2.5rem; /* Ensure it's large enough */
+}
+
+/* Image styling */
+.image {
+    width: 25%;
+    transition: transform 1s ease;
+}
+
+.image.left {
+    transform: translateX(-20%);
+}
+
+.image.right {
+    transform: translateX(20%);
+}
+
+.image img {
+    width: 100%;
+    transition: transform 1s ease;
+}
+
+.image.left img:hover,
+.image.right img:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    nav {
+        height: 7vh;
+    }
+
+    section {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .image {
+        width: 70%;
+        margin: 20px 0;
+    }
+
+    .image.left,
+    .image.right {
+        transform: translateX(0);
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+/* Video container */
+.video-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #b34e66; /* Pink tua */
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.wrapper .logo img {
+    width: 80px; /* Sesuaikan ukuran logo */
+}
+
+.wrapper .links {
+    display: flex;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    position: relative;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #d2911c; /* Ganti warna saat di-hover */
+}
+
+.links a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: whitesmoke;
+    transition: width 0.3s ease;
+}
+
+.links a:hover::before {
+    width: 100%;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto; /* Adjust for content */
+    padding: 2rem 1rem; /* Add padding for responsiveness */
+}
+
+.about .row .video-container {
+    flex: 1 1 50%; /* Adjust to 50% for better balance */
+    position: relative;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%); /* Start from the left */
+    transform-origin: left; /* Scale from the left side */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth animation */
+}
+
+.about .row .video-container video {
+    width: 100%; /* Ensure video scales with container */
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    object-fit: cover;
+}
+
+.about .row .content {
+    flex: 1 1 50%; /* Adjust to 50% for better balance */
+    text-align: left; /* Align text to the left */
+    opacity: 0; /* Start hidden */
+    transform: translateX(100%); /* Start from the right */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth animation */
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #060606;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: #0c0c0c;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Animasi slide-in */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s forwards ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s forwards ease-out;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .about .row {
+        flex-direction: column;
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .about .row .video-container,
+    .about .row .content {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
